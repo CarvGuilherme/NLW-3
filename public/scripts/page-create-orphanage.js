@@ -14,7 +14,7 @@ const icon = L.icon({
 let marker;
 
 //create and add marker
-map.on('click',(event) => {
+map.on("click",(event) => {
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
 
@@ -26,7 +26,7 @@ map.on('click',(event) => {
 
     //add icon layer
 
-    marker = L.marker([lat, lng], {icon})
+    marker = L.marker([lat, lng], { icon })
     .addTo(map)
 })
 
@@ -88,11 +88,14 @@ function toggleSelect(event){
         const input = document.querySelector('[name="open-on-weekends"]')
 
         input.value = button.dataset.value
-    
-    
-
-
 }
+
+// function ValidityState() {
+    
+//     //validar se lat e lng estao preenchidos
+//     event.preventDefault()
+//     alert('Seleciona um ponto no mapa')
+// }
 
 
 
