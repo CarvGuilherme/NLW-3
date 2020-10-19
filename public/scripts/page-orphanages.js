@@ -14,7 +14,7 @@ const icon = L.icon({
 
 function addMarker({id, name, lat, lng}) {
   
-  //create popu overlay
+  //create popup overlay
 
 const popup = L.popup({
   closeButton: false,

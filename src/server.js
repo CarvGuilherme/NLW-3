@@ -5,10 +5,14 @@ const pages = require("./pages.js");
 
 //iniciando o express
 const server = express();
-server
 
-  //utilizar body do req
+
+
+  
+//utilizar body do req
+server
   .use(express.urlencoded({ extended: true }))
+
 
   //utilizando aruqivos estaticos
   .use(express.static("public"))
@@ -18,12 +22,15 @@ server
   .set("view engine", "hbs");
 
 //rotas da aplicacao
-server.get("/", pages.index);
-server.get("/orphanage", pages.orphanage);
-server.get("/orphanages", pages.orphanages);
-server
-  .get("/create-orphanage", pages.createOrphanage)
-  .post("/save-orphanage", pages.saveOrphanage);
+
+  server.get("/", pages.index);
+  server.get("/orphanage", pages.orphanage);
+  server.get("/orphanages", pages.orphanages);
+
+server.get("/create-orphanage", pages.createOrphanage)
+.post("/save-orphanage", pages.saveOrphanage);
 //ligar o servior
 
-server.listen(5500);
+server.listen(5500, () => {
+  console.log("Server Started")
+});
